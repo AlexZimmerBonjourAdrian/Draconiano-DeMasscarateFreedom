@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68ad7e1df5466c46a9709fad696424b, type: 3}
+  m_Name: CommonPistol
+  m_EditorClassIdentifier: 
+  DT_Ammo_Mag_Start: 15
+  DT_Ammo_Max_Reserv: 45
+  DT_Fire_Rate: 0
+  DT_Damage: 0
+  DT_Critical_Prob: 0.176
+  DT_Image_Weapon: {fileID: 21300000, guid: 76e1f7391bdef7243820880a793ddd5f, type: 3}
