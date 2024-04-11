@@ -2,10 +2,12 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-public class COPlayerInRange : Conditional
+public class COPlayerInRange : CEnemyCondition
 {
-	public override TaskStatus OnUpdate()
+	[SerializeField]
+    private bool IsCan;
+    public override TaskStatus OnUpdate()
 	{
-		return TaskStatus.Success;
+		return IsCan == true ?  TaskStatus.Success : TaskStatus.Failure;
 	}
 }
