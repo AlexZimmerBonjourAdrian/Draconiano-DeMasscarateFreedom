@@ -31,11 +31,14 @@ public class TAimPlayer : CEnemyAction
 	
 	public void AimPlayer()
 	{
-		Vector2 dirction = _Player.transform.position - transform.position;
-		Vector2 currentDirection = Vector2.SmoothDamp(transform.forward, dirction, ref currentVelocity, 0.0005f);
-		Quaternion rotation = Quaternion.LookRotation(currentDirection, Vector2.up);
-		
-	}
+		//Vector2 dirction = _Player.transform.position - _ArmWeapon.transform.position;
+		//Vector2 currentDirection = Vector2.SmoothDamp(_ArmWeapon.transform.position, dirction, ref currentVelocity, 0.0005f);
+        Vector2 rotation = _Player.transform.position - _ArmWeapon.transform.position;
+        float rotz = Mathf.Atan2(-rotation.y, -rotation.x) * Mathf.Rad2Deg;
+        // Quaternion rotation = Quaternion.LookRotation(currentDirection, Vector2.right);
+        //transform.rotation = Quaternion.Slerp(_ArmWeapon.transform.rotation, rotation, 0.5f);
+        _ArmWeapon.transform.rotation = Quaternion.Euler(0, 0, rotz);
+    }
 
 	public override TaskStatus OnUpdate()
     {
