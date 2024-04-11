@@ -10,10 +10,11 @@ namespace Core.AI
             {
             protected Rigidbody2D body;
             protected float smoothDamp;
-            protected Vector3 currentVelocity;
-           // protected Transform playerTransform;
+            protected Vector2 currentVelocity;
+           
+        // protected Transform playerTransform;
 
-            [SerializeField]
+             [SerializeField]
             protected Transform targetEnemy;
 
             [SerializeField]
@@ -26,9 +27,11 @@ namespace Core.AI
 
             protected GameObject _Player;
             protected float _Speed = 1;
-            private Vector2 _Move = Vector2.zero;
-            // protected CDataEnemy DataEnemy;
 
+            [SerializeField]
+            protected GameObject _ArmWeapon;
+        // protected CDataEnemy DataEnemy;
+            
             // Start is called before the first frame update
             void Start()
             {
@@ -46,7 +49,7 @@ namespace Core.AI
           
 
      
-        }
+            }
     }
 }
 
