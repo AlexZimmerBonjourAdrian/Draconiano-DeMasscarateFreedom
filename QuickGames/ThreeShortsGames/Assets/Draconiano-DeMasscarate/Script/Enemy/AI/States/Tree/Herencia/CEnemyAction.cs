@@ -30,6 +30,15 @@ namespace Core.AI
 
             [SerializeField]
             protected GameObject _ArmWeapon;
+
+            [SerializeField]
+            protected GameObject _GameObject;
+
+            [SerializeField]
+            protected bool _IsAlert;
+
+            [SerializeField]
+            protected bool _Hit;
         // protected CDataEnemy DataEnemy;
             
             // Start is called before the first frame update
@@ -44,12 +53,7 @@ namespace Core.AI
             }
 
             // Update is called once per frame
-            void Update()
-            {
-          
-
-     
-            }
+            
     }
 }
 

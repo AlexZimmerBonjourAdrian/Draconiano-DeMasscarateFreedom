@@ -14,7 +14,6 @@ public class GenericFollowTest : MonoBehaviour
         if (_Player == null)
         {
             _Player = GameObject.FindGameObjectWithTag("Player");
-
             //throw new ArgumentNullException("El valor no puede ser null");
         }
     }

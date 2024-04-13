@@ -13,12 +13,23 @@ namespace Zuzu
         //private  float _Speed = 1;
         //private Vector2 _Move = Vector2.zero;
         public float _life = 100;
-        public bool IsDead = false;
+        public bool _IsDead = false;
+        public bool _IsHit = false;
+        public float _HitTime = .2f;
 
+        public SpriteRenderer _spriteRenderer;
+
+        public Color _Red = Color.red;
+        public Color _Yellow = Color.yellow;
+
+        public GameObject _gameObject;
+
+        public CDetectionBullet _collisionBullet;
         public void OnDamage(float damage)
         {
             SetLife(GetLife() - damage);
             CheckLife();
+            SetHit(true);
         }
 
         public void SetLife(float Life)
@@ -32,11 +43,34 @@ namespace Zuzu
 
         }
 
+        public void SetHit(bool IsHit)
+        {
+            _IsHit = IsHit;
+
+        }
+        public bool GetHit()
+        {
+            return _IsHit;
+
+        }
+
+        public void SetDead(bool IsDead)
+        {
+            _IsDead = IsDead;
+
+        }
+        public bool GetDead()
+        {
+            return _IsDead;
+
+        }
+
         // Start is called before the first frame update
         void Start()
-    {
-       
-      
+        {
+        
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _collisionBullet = GetComponentInChildren<CDetectionBullet>();
                 //if (_Player == null)
                 //{ 
                 //    _Player = GameObject.FindGameObjectWithTag("Player");
@@ -52,18 +86,35 @@ namespace Zuzu
     }
 
     // Update is called once per frame
-    void Update()
-    {
+
+        public void ChangeHit()
+        {
+
+            SetHit(false);
+            _spriteRenderer.color = _Red;
+        }
+    public  void ReciveDamage()
+     {
+        if(_IsHit == true)
+         {
+                _spriteRenderer.color = _Yellow;
+                Invoke("ChangeHit", _HitTime);
+                
+         }
+        else
+         {
+                
+                Debug.Log("Esta bien");
+         }
         
-
-
-    }
+     }
 
     public void CheckLife()
     {
         if(_life<= 0)
         {
-                Debug.Log("El Enemigo Esta muerto");    
+                Debug.Log("El Enemigo Esta muerto");
+                _IsDead = true;
                 Destroy(gameObject);
         }
         else

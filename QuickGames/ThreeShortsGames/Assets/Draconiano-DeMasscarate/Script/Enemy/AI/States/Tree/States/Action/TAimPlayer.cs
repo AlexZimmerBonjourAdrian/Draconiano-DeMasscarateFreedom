@@ -1,9 +1,10 @@
 using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
+using BehaviorDesigner.Runtime.Tasks.Unity.UnityGameObject;
 using Core.AI;
 using UnityEditor;
-using BehaviorDesigner.Runtime.Tasks.Unity.UnityGameObject;
+
 
 public class TAimPlayer : CEnemyAction
 {
