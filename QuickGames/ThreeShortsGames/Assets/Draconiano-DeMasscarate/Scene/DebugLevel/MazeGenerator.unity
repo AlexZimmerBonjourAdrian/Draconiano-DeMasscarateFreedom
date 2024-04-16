@@ -406,9 +406,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPosition: {x: 0, y: 0}
-  iterations: 1
+  iterations: 10
   walkLength: 10
   startRandomlyEachIteration: 1
+  tilemapVisualizer: {fileID: 1776374216}
 --- !u!4 &222493673
 Transform:
   m_ObjectHideFlags: 0
@@ -5270,10 +5271,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7607,6 +7608,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 368361211}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1776374214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1776374215}
+  - component: {fileID: 1776374216}
+  m_Layer: 0
+  m_Name: TileVizualizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1776374215
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776374214}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1837.8844, y: 1063.0846, z: -0.074903026}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1776374216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776374214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392a16a1d30d44b4ab44cae6834ff573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorTileMap: {fileID: 53994145}
+  floorTile: {fileID: 11400000, guid: 471853985ed4b5242ad12af71ace0cf6, type: 2}
 --- !u!1 &1956449364
 GameObject:
   m_ObjectHideFlags: 0
@@ -9094,8 +9141,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1449339384}
-  - {fileID: 222493673}
   - {fileID: 379467927}
   - {fileID: 2026660821}
   - {fileID: 687401273}
   - {fileID: 621579226}
+  - {fileID: 1776374215}
+  - {fileID: 222493673}
