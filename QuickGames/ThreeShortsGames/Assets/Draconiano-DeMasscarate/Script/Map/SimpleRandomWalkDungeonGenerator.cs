@@ -35,6 +35,7 @@ public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator
         HashSet<Vector2Int> floorPosition = RunRandomWalk();
         tilemapVisualizer.Clear();
         tilemapVisualizer.PointFoorTiles(floorPosition);
+        WallGenerator.CreateWalls(floorPosition, tilemapVisualizer);
         //foreach(var position in floorPosition)
         //{
         //    Debug.Log(position);
