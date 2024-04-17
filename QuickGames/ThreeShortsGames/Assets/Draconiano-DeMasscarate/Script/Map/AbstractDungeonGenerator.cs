@@ -22,5 +22,5 @@ public abstract class AbstractDungeonGenerator : MonoBehaviour
     }
     protected abstract void RunProceduralGeneration();
 
-    protected abstract HashSet<Vector2Int> RunRandomWalk();
+   // protected abstract HashSet<Vector2Int> RunRandomWalk();
 }
