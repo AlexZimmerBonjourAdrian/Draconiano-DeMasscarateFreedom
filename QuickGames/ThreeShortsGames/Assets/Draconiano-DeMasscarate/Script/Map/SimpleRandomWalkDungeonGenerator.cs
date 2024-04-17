@@ -10,41 +10,24 @@ using Random = UnityEngine.Random;
 public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator
 {
 
-    //[SerializeField]
-    //protected Vector2Int startPosition = Vector2Int.zero;
-
-    //[SerializeField]
-    //private int iterations = 10;
-
-    //[SerializeField]
-    //public int walkLength = 10;
-
-    //[SerializeField]
-    //public bool startRandomlyEachIteration = true;
 
     [SerializeField]
-    private SimpleRandomWalkSO randomWalkParameters;
+    protected SimpleRandomWalkSO randomWalkParameters;
 
-
-    //[SerializeField]
-    //private TilemapVisualizer tilemapVisualizer;
 
 
     protected override void RunProceduralGeneration()
     {
-        HashSet<Vector2Int> floorPosition = RunRandomWalk(randomWalkParameters);
+        HashSet<Vector2Int> floorPosition = RunRandomWalk(randomWalkParameters, startPosition);
         tilemapVisualizer.Clear();
         tilemapVisualizer.PointFoorTiles(floorPosition);
         WallGenerator.CreateWalls(floorPosition, tilemapVisualizer);
-        //foreach(var position in floorPosition)
-        //{
-        //    Debug.Log(position);
-        //}
+        
     }
 
-    protected HashSet<Vector2Int> RunRandomWalk(SimpleRandomWalkSO parameters)
+    protected HashSet<Vector2Int> RunRandomWalk(SimpleRandomWalkSO parameters, Vector2Int position)
     {
-        var currentPosition = startPosition;
+        var currentPosition = position;
         HashSet<Vector2Int> floorPosition = new HashSet<Vector2Int>();
         for (int i = 0;i < parameters.interactions; i++)
         {
