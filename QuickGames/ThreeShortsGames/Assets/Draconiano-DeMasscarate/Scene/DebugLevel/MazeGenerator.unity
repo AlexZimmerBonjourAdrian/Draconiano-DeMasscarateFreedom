@@ -522,8 +522,8 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0}
   randomWalkParameters: {fileID: 11400000, guid: b7ea81f55e144e74191515a98a601b8d, type: 2}
   corridorLenght: 30
-  corridorCount: 8
-  roomPercent: 0.617
+  corridorCount: 10
+  roomPercent: 0.5
 --- !u!4 &236080289
 Transform:
   m_ObjectHideFlags: 0
