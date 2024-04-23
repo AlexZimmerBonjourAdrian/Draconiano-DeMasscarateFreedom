@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - RootWeapon
   - BulletPlayer
+  - SpawnPointer
+  - room
   layers:
   - Default
   - TransparentFX
