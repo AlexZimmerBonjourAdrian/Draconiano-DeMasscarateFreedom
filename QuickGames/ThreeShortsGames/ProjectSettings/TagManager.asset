@@ -10,6 +10,7 @@ TagManager:
   - BulletPlayer
   - SpawnPointer
   - room
+  - Rooms
   layers:
   - Default
   - TransparentFX

@@ -16,15 +16,21 @@ public class RoomSpawner : MonoBehaviour
     private RoomTemplate templates;
     private int rand;
     private bool spawned = false;
+    [SerializeField] 
+    //private GameObject Room;
+    
     void Start()
     {
         templates = GameObject.FindGameObjectWithTag("room").GetComponent<RoomTemplate>();
         Invoke("Spawn", 0.1f);
+        //Room = GetComponentInParent<GameObject>();
+        
     }
 
     public void Spawn()
     {
         if(spawned == false)
+        { 
          switch (OpeningDirection)
         {
             case 1:
@@ -48,16 +54,43 @@ public class RoomSpawner : MonoBehaviour
                 //Need to spawn a room whith a bottom
                 break;
             default:
-                break;
-             
+                break; 
         }
-        spawned = true;
+
+            spawned = true;
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("SpawnPoint") && other.GetComponent<RoomSpawner>().spawned == false)
+
+        if(other.CompareTag("SpawnPointer") && other.GetComponent<RoomSpawner>().spawned == true)
         {
             Destroy(gameObject);
+          
+        }
+        if(other.CompareTag("Rooms") && other.GetComponent<RoomSpawner>().spawned == true)
+        {
+            // Destroy(this.gameObject.GetComponentInParent<GameObject>().gameObject);
+            spawned = true;
+        }
+        
+        
+
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Rooms"))
+        {
+            spawned = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Rooms"))
+        {
+            spawned = false;
         }
     }
 }
