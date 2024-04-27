@@ -10,4 +10,14 @@ public class RoomTemplate : MonoBehaviour
     public GameObject[] leftRooms;
     public GameObject[] rightRooms;
 
+    [SerializeField] 
+    public GameObject layer;
+
+    private void Start()
+    {
+        layer = GameObject.FindGameObjectWithTag("Grid");
+    }
+
+    public GameObject GetLayer()
+    {  return layer; }
 }

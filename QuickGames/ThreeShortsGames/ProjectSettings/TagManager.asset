@@ -11,6 +11,7 @@ TagManager:
   - SpawnPointer
   - room
   - Rooms
+  - Grid
   layers:
   - Default
   - TransparentFX
