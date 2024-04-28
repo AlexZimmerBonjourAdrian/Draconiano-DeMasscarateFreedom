@@ -7,15 +7,15 @@ using UnityEngine;
 public class CSpanwerRooms : MonoBehaviour
 {
 
-    private RoomTemplate templates;
+  
     private GameObject[] SpawnPointer;
     private bool spawned = false;
 
     void Start()
     {
-       templates = GameObject.FindGameObjectWithTag("room").GetComponent<RoomTemplate>();
-  
-      SpawnPointer = GameObject.FindGameObjectsWithTag("SpawnPointer");
+
+        Invoke("CheckCollision", 0.1f);
+        SpawnPointer = GameObject.FindGameObjectsWithTag("SpawnPointer");
        for (int i = SpawnPointer.Length - 1; i >= 0; i--)
         {
            if(!(SpawnPointer[i].transform == transform.parent))
@@ -23,13 +23,19 @@ public class CSpanwerRooms : MonoBehaviour
                 SpawnPointer.ToList().RemoveAt(i);
             }
         }
-        Invoke("CheckCollision", 0.1f);
+       
     }
         public void CheckCollision()
         {
+       
+           { 
             for (int i = 0; i < SpawnPointer.Length; i++)
             {
-                var collider = SpawnPointer[i].GetComponent<Collider2D>();
+                Debug.Log(SpawnPointer.Length);
+                if (SpawnPointer[i] != null)
+                {
+                    var collider = SpawnPointer[i].GetComponent<Collider2D>();
+                
             //  float radius = collider.size.x / 2; // Asume que el collider es un círculo
             /* Physics2D.OverlapBoxAll(SpawnPointer[i].transform.position, radius);*/
 
@@ -40,15 +46,17 @@ public class CSpanwerRooms : MonoBehaviour
             //        Debug.Log("El objeto " + SpawnPointer[i].name + " está colisionando con " + col.gameObject.name);
 
             //}
-              if(collider.CompareTag("Rooms"))
-            {
-                if(collider.gameObject)
+                if(collider.CompareTag("Rooms"))
                 {
-                    Destroy(collider.gameObject);
+                    
+                        Destroy(collider.gameObject);
+                        
                 }
+
+                   // }
+               }
+                
             }
-               // }
-            }
-       
+        }
     }
 }

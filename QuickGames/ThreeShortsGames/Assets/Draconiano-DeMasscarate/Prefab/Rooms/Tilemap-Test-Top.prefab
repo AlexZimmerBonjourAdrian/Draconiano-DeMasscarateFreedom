@@ -730,6 +730,8 @@ GameObject:
   - component: {fileID: 603319907684059616}
   - component: {fileID: 3485371967295493167}
   - component: {fileID: 8560061457388109728}
+  - component: {fileID: -8786451766930188896}
+  - component: {fileID: 1049628485063557059}
   m_Layer: 20
   m_Name: Tilemap-Test-Top
   m_TagString: Rooms
@@ -829,6 +831,30 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &-8786451766930188896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182945925411900625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408f03adc4176404c82e1b6083a8d4c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1049628485063557059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182945925411900625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d34a6ff89b12a48ad90800e4fe25bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &865612115017794196
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,7 +873,7 @@ GameObject:
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4909237663107683263
 Transform:
   m_ObjectHideFlags: 0
@@ -858,7 +884,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -10.14, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.87979, y: 0.87979, z: 0.87979}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 603319907684059616}
@@ -915,12 +941,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865612115017794196}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f79994bdf18a56418a9e913e7851e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OpeningDirection: 1
+  Collider: {fileID: 0}
 --- !u!50 &5794024934429172072
 Rigidbody2D:
   serializedVersion: 4

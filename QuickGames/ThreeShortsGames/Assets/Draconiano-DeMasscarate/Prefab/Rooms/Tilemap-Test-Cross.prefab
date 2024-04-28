@@ -2705,6 +2705,7 @@ GameObject:
   - component: {fileID: 6169058641010696179}
   - component: {fileID: 7816336792614416088}
   - component: {fileID: 1228829040296540656}
+  - component: {fileID: 3569370662546038520}
   m_Layer: 20
   m_Name: Tilemap-Test-Cross
   m_TagString: Rooms
@@ -2803,3 +2804,15 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &3569370662546038520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4381280494792786139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d34a6ff89b12a48ad90800e4fe25bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

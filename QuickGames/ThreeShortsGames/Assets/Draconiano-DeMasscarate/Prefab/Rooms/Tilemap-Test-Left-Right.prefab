@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5425645127906181443}
   - component: {fileID: 4282370245372132763}
   - component: {fileID: 5308880306091221878}
+  - component: {fileID: 9045891497436104628}
+  - component: {fileID: 972666725648514106}
   m_Layer: 20
   m_Name: Tilemap-Test-Left-Right
   m_TagString: Rooms
@@ -111,6 +113,30 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &9045891497436104628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850847203472803554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408f03adc4176404c82e1b6083a8d4c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &972666725648514106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850847203472803554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d34a6ff89b12a48ad90800e4fe25bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3652924822001984393
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,7 +778,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -19.12, y: 0.02, z: -0.0060841106}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.96464, y: 0.96464, z: 0.96464}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5425645127906181443}
@@ -814,7 +840,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f79994bdf18a56418a9e913e7851e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OpeningDirection: 4
+  OpeningDirection: 3
+  Collider: {fileID: 0}
 --- !u!50 &4764854489549640198
 Rigidbody2D:
   serializedVersion: 4
@@ -871,7 +898,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 19.16, y: 0.02, z: -0.0060841106}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.95757, y: 0.95757, z: 0.95757}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5425645127906181443}
@@ -933,7 +960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f79994bdf18a56418a9e913e7851e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OpeningDirection: 3
+  OpeningDirection: 4
+  Collider: {fileID: 0}
 --- !u!50 &5811095798507245862
 Rigidbody2D:
   serializedVersion: 4

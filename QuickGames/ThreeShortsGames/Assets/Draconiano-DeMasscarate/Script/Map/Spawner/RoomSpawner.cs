@@ -14,11 +14,13 @@ public class RoomSpawner : MonoBehaviour
     private bool spawned = false;
     private bool collision = true;
     public BoxCollider2D Collider;
+
     void Start()
     {
         templates = GameObject.FindGameObjectWithTag("room").GetComponent<RoomTemplate>();
         Collider = GetComponent<BoxCollider2D>();
         Invoke("Spawn", 0.5f);
+
     }
 
     public void Spawn()
@@ -56,37 +58,67 @@ public class RoomSpawner : MonoBehaviour
             }
             spawned = true;
         }
+       
     }
 
-     public void OnTriggerEnter2D(Collider2D other)
+    //public void Update()
+    //{
+    //    if()
+       
+    //        Destroy(gameObject);
+        
+    //}
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("SpawnPointer"))
         {
+            templates.StartAdnEnd();
             spawned = true;
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
         else if (other.CompareTag("Rooms"))
         {
+            templates.StartAdnEnd();
             spawned = true;
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }
 
-    //private void OnTriggerStay2D(Collider2D other)
+    //public void OnTriggerStay2D(Collider2D other)
     //{
+    //    if (other.CompareTag("SpawnPointer"))
+    //    {
+    //        templates.StartAdnEnd();
+    //        spawned = true;
+    //        Destroy(other.gameObject);
+    //        Destroy(gameObject);
+    //    }
     //    if (other.CompareTag("Rooms"))
     //    {
+    //        templates.StartAdnEnd();
     //        spawned = true;
+    //        Destroy(other.gameObject);
+    //        Destroy(gameObject);
     //    }
     //}
 
-    //private void OnTriggerExit2D(Collider2D other)
+    //public void OnTriggerExit2D(Collider2D other)
     //{
+    //    if (other.CompareTag("SpawnPointer"))
+    //    {
+    //        templates.StartAdnEnd();
+    //        spawned = true;
+    //        Destroy(other.gameObject);
+    //        Destroy(gameObject);
+    //    }
     //    if (other.CompareTag("Rooms"))
     //    {
-    //        spawned = false;
+    //        templates.StartAdnEnd();
+    //        spawned = true;
+    //        Destroy(other.gameObject);
+    //        Destroy(gameObject);
     //    }
     //}
 }

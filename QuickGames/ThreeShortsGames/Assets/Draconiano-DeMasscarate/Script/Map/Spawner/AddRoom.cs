@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AddRoom : MonoBehaviour
 {
+    private RoomTemplate templates;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        templates = GameObject.FindGameObjectWithTag("room").GetComponent<RoomTemplate>();
+        templates.rooms.Add(this.gameObject);
     }
 }
+
