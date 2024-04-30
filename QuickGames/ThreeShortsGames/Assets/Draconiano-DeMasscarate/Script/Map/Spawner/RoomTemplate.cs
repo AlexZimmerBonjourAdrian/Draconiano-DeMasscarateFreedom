@@ -21,6 +21,7 @@ public class RoomTemplate : MonoBehaviour
     public List<GameObject> rooms;
     public bool complete = false;
     public GameObject boss;
+    public GameObject closedRoom;
     private void Start()
     {
         layer = GameObject.FindGameObjectWithTag("Grid");

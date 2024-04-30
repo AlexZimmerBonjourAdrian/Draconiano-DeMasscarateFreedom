@@ -15,6 +15,7 @@ public class RoomSpawner : MonoBehaviour
     private bool collision = true;
     public BoxCollider2D Collider;
 
+
     void Start()
     {
         templates = GameObject.FindGameObjectWithTag("room").GetComponent<RoomTemplate>();
@@ -70,19 +71,29 @@ public class RoomSpawner : MonoBehaviour
     //}
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("SpawnPointer"))
+        //if (other.CompareTag("SpawnPointer"))
+        //{
+        //    templates.StartAdnEnd();
+        //    spawned = true;
+        //    Destroy(other.gameObject);
+        //    Destroy(gameObject);
+        //}
+        //else if (other.CompareTag("Rooms"))
+        //{
+        //    templates.StartAdnEnd();
+        //    spawned = true;
+        //    Destroy(other.gameObject);
+        //    Destroy(gameObject);
+        //}
+
+        if (other.CompareTag("SpawnPoint"))
         {
-            templates.StartAdnEnd();
+            if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
+            {
+                Instantiate(templates.closedRoom, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
             spawned = true;
-            Destroy(other.gameObject);
-            Destroy(gameObject);
-        }
-        else if (other.CompareTag("Rooms"))
-        {
-            templates.StartAdnEnd();
-            spawned = true;
-            Destroy(other.gameObject);
-            Destroy(gameObject);
         }
     }
 
