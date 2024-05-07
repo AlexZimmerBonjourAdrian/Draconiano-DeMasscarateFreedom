@@ -28,7 +28,7 @@ public class TFollowPlayerEnemyTest : CEnemyAction
         if (_Player != null)
         {
             FollowPlayer();
-            return TaskStatus.Running;
+            return TaskStatus.Success;
 
         }
         else

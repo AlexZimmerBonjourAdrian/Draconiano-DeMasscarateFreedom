@@ -4,12 +4,14 @@ using BehaviorDesigner.Runtime.Tasks;
 using BehaviorDesigner.Runtime.Tasks.Unity.UnityGameObject;
 using Core.AI;
 using UnityEditor;
+using BehaviorDesigner.Runtime.Tasks.Unity.UnityVector2;
 
 
 public class TAimPlayer : CEnemyAction
 {
     BehaviorTree _BehaviorTree;
     SharedVariable _Variable;
+   
 
     public override void OnStart()
 	{
@@ -43,10 +45,11 @@ public class TAimPlayer : CEnemyAction
 
 	public override TaskStatus OnUpdate()
     {
+      //  float distance = Vector3.Distance(_Player.transform.position, transform.position);
         if (_Player != null)
         {
             AimPlayer();
-            return TaskStatus.Running;
+            return TaskStatus.Success;
 
         }
         else

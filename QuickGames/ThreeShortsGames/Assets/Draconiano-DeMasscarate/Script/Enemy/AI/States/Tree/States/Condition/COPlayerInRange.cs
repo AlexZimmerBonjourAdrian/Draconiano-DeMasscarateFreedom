@@ -13,6 +13,9 @@ public class COPlayerInRange : CEnemyCondition
 	[SerializeField]
 	public float range;
 
+    [SerializeField]
+    public float MaxRange;
+
     public override void OnStart()
     {
         if (_Player == null)
@@ -24,6 +27,6 @@ public class COPlayerInRange : CEnemyCondition
     public override TaskStatus OnUpdate()
 	{
         float distance = Vector3.Distance(_Player.transform.position, transform.position);
-        return distance <= range ? TaskStatus.Success : TaskStatus.Failure;
+        return (distance <= range && distance >= MaxRange) ? TaskStatus.Success : TaskStatus.Failure;
     }
 }
