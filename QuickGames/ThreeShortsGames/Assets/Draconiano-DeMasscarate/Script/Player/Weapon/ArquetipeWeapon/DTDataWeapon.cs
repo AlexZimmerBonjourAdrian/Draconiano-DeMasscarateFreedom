@@ -19,4 +19,15 @@ public class DTDataWeapon : ScriptableObject
     public float DT_Critical_Prob;
 
     public Sprite DT_Image_Weapon;
+
+    [SerializeField]
+    public enum typeShoot
+    {
+        None = 0,
+        Single = 1,
+        Rafaga = 2,
+        Auto = 3
+    };
+    [SerializeField]
+    public typeShoot DT_Shoot;
 }
