@@ -5,9 +5,14 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Draconiano-DeMasscarate/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Draconiano-DeMasscarate/Scenes-Android/Grid_Android.unity
+    guid: 1cef9ff6a9fcb344ba04a5e4e73a71e2
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: e94223b2a79e0cc42abc63727656c9ea, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: c28b937a220273b4daa3604b4466b1c4, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 08853291126088e4db5de551f4db981b, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 2d2a6cb6852637e4ca3e3a6c13f0e613, type: 2}

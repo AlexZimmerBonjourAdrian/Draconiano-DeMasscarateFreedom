@@ -1,6 +1,7 @@
+using BehaviorDesigner.Runtime.Tasks.Unity.UnityLayerMask;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Build;
+//using UnityEditor.Build;
 using UnityEngine;
 using Zuzu;
 
@@ -24,18 +25,28 @@ public class CNormalBullet : CGenericBullet
         _Rig.AddForce(vel, ForceMode2D.Impulse);
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (other.gameObject.CompareTag("Enemy"))
+        int layer = LayerMask.NameToLayer("Collisionable");
+        if (other.gameObject.CompareTag("Enemy") && !other.gameObject.CompareTag("Player"))
         {
             //if (other.gameObject != null)
             //{
                other.gameObject.GetComponent<IDamage>().OnDamage(_Damage);
-                Debug.LogWarning("Collision Enemy");
+               
+                 Debug.LogWarning("Collision Enemy");
+                Destroy(gameObject,0f);    
             //}
         }
-       Destroy(gameObject);
+         else if(other.gameObject.layer == layer )
+        {
+            Debug.LogWarning("No es un enemigo");
+            Destroy(gameObject, 0f);
+        }
+        Destroy(gameObject, 5f);
+
+
+
     }
 
    
