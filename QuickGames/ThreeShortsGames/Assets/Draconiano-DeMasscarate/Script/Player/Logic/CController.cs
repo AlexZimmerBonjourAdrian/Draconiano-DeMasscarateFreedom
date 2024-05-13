@@ -68,7 +68,7 @@ namespace Draconiano_Android
 {
     public class CController : MonoBehaviour, IInteract
     {
-        [SerializeField] protected float _Speed = 5;
+        [SerializeField] protected float _Speed;
         // Start is called before the first frame update
         [SerializeField] protected Rigidbody2D _Rigidbody2D;
         //  private float _Acceleration = 0;
@@ -94,7 +94,7 @@ namespace Draconiano_Android
         void Start()
         {
             _Rigidbody2D = GetComponent<Rigidbody2D>();
-            _Speed = 20;
+            //_Speed = 20;
         }
         private void Dash()
         {
@@ -128,7 +128,7 @@ namespace Draconiano_Android
 
         public void FixedUpdate()
         {
-            _Rigidbody2D.MovePosition(_Rigidbody2D.position + _Move * _Speed * Time.deltaTime);
+            _Rigidbody2D.MovePosition(_Rigidbody2D.position + _Move * (_Speed * Time.deltaTime));
 
         }
 

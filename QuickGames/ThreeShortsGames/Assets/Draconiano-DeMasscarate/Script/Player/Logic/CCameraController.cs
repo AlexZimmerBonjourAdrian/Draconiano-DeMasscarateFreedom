@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class CCameraController : MonoBehaviour
 {
-    private GameObject _Player;
-    private float _Speed = 0.4f;
-    private Vector2 _Move = Vector2.zero;
-    private float offset;
+    public Transform target;
+    // private GameObject _Player;
+    public float lerpSpeed;
+    private Vector3 offset;
+    private Vector3 targetPos;
+    //private Vector2 _Move = Vector2.zero;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        if (_Player == null)
+        if (target == null)
         {
-            _Player = GameObject.FindGameObjectWithTag("Player");
+            target = GameObject.FindGameObjectWithTag("Player").transform;
 
             //throw new ArgumentNullException("El valor no puede ser null");
         }
+        //offset = transform.position - target.position;
     }
 
     // Update is called once per frame
@@ -28,7 +32,10 @@ public class CCameraController : MonoBehaviour
 
     public void FollowPlayer()
     {
-        transform.position = _Player.transform.position;
+        //+offset
+        targetPos = target.position;
+        transform.position = Vector3.Lerp(transform.position, targetPos, lerpSpeed * Time.deltaTime);
+        // transform.position = _Player.transform.position;
 
     }
 }

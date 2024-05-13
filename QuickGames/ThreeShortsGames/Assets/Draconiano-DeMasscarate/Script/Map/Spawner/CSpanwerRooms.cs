@@ -9,7 +9,7 @@ public class CSpanwerRooms : MonoBehaviour
 
   
     private GameObject[] SpawnPointer;
-    private bool spawned = false;
+   // private bool spawned = false;
 
     void Start()
     {

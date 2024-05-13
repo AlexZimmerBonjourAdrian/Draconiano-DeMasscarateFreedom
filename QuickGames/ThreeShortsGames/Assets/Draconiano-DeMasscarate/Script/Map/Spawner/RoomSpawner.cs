@@ -12,7 +12,7 @@ public class RoomSpawner : MonoBehaviour
     private RoomTemplate templates;
     private int rand;
     private bool spawned = false;
-    private bool collision = true;
+  //  private bool collision = true;
     public BoxCollider2D Collider;
 
 

@@ -2,23 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-namespace Zuzu
-{
-
-
 public class CGameManager : MonoBehaviour
 {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+    public void Start()
+    {
+        CGameEvent.current.OnEndWave += EndWave;
+        CGameEvent.current.OnStartWave += StartWave;
+        CGameEvent.current.OnWinCondition += WinCondition;
+        CGameEvent.current.OnLoseCondition += LoseCondition;
+        CGameEvent.current.OnEnemiesISDead += EnemiesIsDead;
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+    }
+
+    public void StartWave()
+    {
+
+    }
+    public void EnemiesIsDead()
+    {
+
+    }
+
+    public void WinCondition()
+    {
+
+    }
+
+    public void LoseCondition()
+    {
+
+    }
+
+    public void EndWave()
+
+    {
+
     }
 }
