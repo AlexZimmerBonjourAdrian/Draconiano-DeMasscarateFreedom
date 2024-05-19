@@ -143,4 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90beabd71eb623e4e9962c4c66d46df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeponShootPrefab: {fileID: 0}
+  WeponShootPrefab: {fileID: 8313426008307241849, guid: 19e05a1378f1e8244846a5f2f178930f, type: 3}

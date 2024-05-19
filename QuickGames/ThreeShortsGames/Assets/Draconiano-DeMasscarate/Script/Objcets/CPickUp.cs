@@ -13,12 +13,29 @@ namespace Draconiano.Items
         [SerializeField]
         public GameObject WeponShootPrefab;
 
+        public CWeaponManager ManagerWeapon;
 
+        public void Start()
+        {
+
+            ManagerWeapon = FindObjectOfType<CWeaponManager>();
+            
+        }
         public void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.collider.gameObject.CompareTag("Player"))
+            if (ManagerWeapon != null)
             {
-                Destroy(gameObject);
+                if (collision.gameObject.tag == "Player")
+                {
+                    Debug.Log("Entra en la funcion de collider");
+                   
+                    if (ManagerWeapon.GetListWeapon().Count <= 1)
+                    {
+                        ManagerWeapon.AddWeapon(WeponShootPrefab);
+                        Destroy(this.gameObject);
+                    }
+
+                }
             }
         }
     }

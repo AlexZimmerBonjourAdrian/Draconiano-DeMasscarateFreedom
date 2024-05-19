@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90beabd71eb623e4e9962c4c66d46df6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeponShootPrefab: {fileID: 0}
+  WeponShootPrefab: {fileID: 8143889152233283400, guid: 61dcea383c2833940b8defbaae8d5cce, type: 3}
 --- !u!61 &3225972486649953472
 BoxCollider2D:
   m_ObjectHideFlags: 0
